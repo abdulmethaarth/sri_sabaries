@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="@dimen/dp10"
+    android:layout_marginRight="@dimen/dp10"
+    android:layout_marginTop="@dimen/dp5"
+    android:layout_marginBottom="@dimen/dp5"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_cross_search"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:padding="@dimen/dp10"
+        android:visibility="gone"
+        android:background="@color/white"
+        android:src="@drawable/cross_grey" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_mag_icon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/dp10"
+            android:background="@color/white"
+            android:src="@drawable/search_icon" />
+
+    <affinity.com.srisabaries.customviews.CustomTypefaceEditText
+        android:id="@+id/et_search"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/search_mag_icon"
+        style="@style/edit_text_search" />
+
+    <!--<View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_elev_toolbar"
+        android:layout_below="@id/et_search"
+        android:background="@drawable/x_ds_drop_shadow" />-->
+</RelativeLayout>

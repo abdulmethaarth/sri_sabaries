@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="affinity.com.srisabaries.ui.activities.MyProfileActivity">
+
+    <include layout="@layout/include_toolbar" />
+
+    <affinity.com.srisabaries.customviews.VerticalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/d_mar_ll_profile"
+        android:layout_marginLeft="@dimen/d_mar_ll_profile"
+        android:layout_marginRight="@dimen/d_mar_ll_profile"
+        android:scrollbarThumbVertical="@drawable/x_ds_scrollbar_thumb"
+        android:scrollbarTrackVertical="@drawable/x_ds_scrollbar_track"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/d_mar_ll_profile"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/d_mar_ll_profile">
+
+            <affinity.com.srisabaries.customviews.CustomTypefaceTextView
+                style="@style/textview_address_title"
+                android:text="@string/txt_name" />
+
+            <affinity.com.srisabaries.customviews.CustomTypefaceEditText
+                android:id="@+id/et_name"
+                style="@style/edittext_address_text"
+                android:maxLength="40" />
+
+            <View style="@style/view_address" />
+
+            <affinity.com.srisabaries.customviews.CustomTypefaceTextView
+                style="@style/textview_address_title"
+                android:text="@string/txt_address" />
+
+            <affinity.com.srisabaries.customviews.CustomTypefaceEditText
+                android:id="@+id/et_address"
+                style="@style/edittext_address_multiline_text"
+                android:maxLength="@integer/max_length_address"
+                android:singleLine="true" />
+
+            <View style="@style/view_address" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/d_mar_t_profile_label"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <affinity.com.srisabaries.customviews.CustomTypefaceTextView
+                        style="@style/textview_address_title_half"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/txt_mobile_no" />
+
+                    <affinity.com.srisabaries.customviews.CustomTypefaceEditText
+                        android:id="@+id/et_mobile_no"
+                        style="@style/edittext_profile_text"
+                        android:inputType="phone"
+                        android:maxLength="@integer/max_length_mobile" />
+
+                    <View style="@style/view_address" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <affinity.com.srisabaries.customviews.CustomTypefaceTextView
+                        style="@style/textview_address_title_half"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/txt_pin_code" />
+
+                    <affinity.com.srisabaries.customviews.CustomTypefaceEditText
+                        android:id="@+id/et_pin_code"
+                        style="@style/edittext_profile_text"
+                        android:digits="0123456789"
+                        android:inputType="number" />
+
+                    <View style="@style/view_address" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <affinity.com.srisabaries.customviews.CustomTypefaceTextView
+                style="@style/textview_address_title"
+                android:text="@string/txt_landmark" />
+
+            <affinity.com.srisabaries.customviews.CustomTypefaceEditText
+                android:id="@+id/et_landmark"
+                style="@style/edittext_address_text"
+                android:maxLength="@integer/max_length_address" />
+
+            <View style="@style/view_address" />
+
+            <affinity.com.srisabaries.customviews.CustomTypefaceTextView
+                style="@style/textview_address_title_half"
+                android:text="@string/txt_city" />
+
+            <affinity.com.srisabaries.customviews.CustomTypefaceEditText
+                android:id="@+id/et_city"
+                style="@style/edittext_profile_text"
+                 />
+
+            <View style="@style/view_address" />
+
+            <affinity.com.srisabaries.customviews.CustomTypefaceTextView
+                style="@style/textview_address_title"
+                android:text="@string/txt_state" />
+
+            <affinity.com.srisabaries.customviews.CustomTypefaceEditText
+                android:id="@+id/et_state"
+                style="@style/edittext_address_text"
+                 />
+
+            <View style="@style/view_address" />
+
+            <LinearLayout
+                android:id="@+id/ll_btns_tutorial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/d_mar_t_ll_address_btns"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/d_pad_ll_tutorial"
+                android:paddingTop="@dimen/d_pad_ll_tutorial">
+
+                <affinity.com.srisabaries.customviews.CustomTypefaceButton
+                    android:id="@+id/btn_cancel"
+                    style="@style/btn_transparent"
+                    android:layout_marginRight="@dimen/d_mar_btn_tutorial"
+                    android:background="@drawable/x_ds_transparent_blue"
+                    android:text="@string/txt_cancel_address"
+                    android:textColor="@color/c_blue_outline" />
+
+                <affinity.com.srisabaries.customviews.CustomTypefaceButton
+                    android:id="@+id/btn_save"
+                    style="@style/btn_transparent"
+                    android:layout_marginLeft="@dimen/d_mar_btn_tutorial"
+                    android:background="@drawable/x_ds_transparent_blue"
+                    android:text="@string/txt_save_address"
+                    android:textColor="@color/c_blue_outline" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </affinity.com.srisabaries.customviews.VerticalScrollView>
+
+</LinearLayout>

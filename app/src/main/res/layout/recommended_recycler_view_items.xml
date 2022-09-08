@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_recommended"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardElevation="@dimen/dp10"
+        card_view:cardUseCompatPadding="true"
+        android:background="@color/white"
+        card_view:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_recommended"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logo"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:scaleType="fitCenter" />
+
+            <View
+                android:id="@+id/iv_recommended_overlay"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:visibility="gone"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:background="@color/c_home_overlay"
+                android:scaleType="centerCrop" />
+
+            <affinity.com.srisabaries.customviews.CustomTypefaceTextView
+                android:id="@+id/tv_recommended"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fbvdsfbvsdfbsfs"
+                android:singleLine="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp10"
+                android:textColor="@color/c_black"
+                android:layout_marginBottom="5dp"
+                android:textSize="@dimen/d_mar_large_15dp" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+</RelativeLayout>

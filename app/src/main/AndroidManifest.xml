@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="affinity.com.srisabaries">
+
+    <uses-sdk tools:overrideLibrary="android.support.customtabs" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <application
+        android:name="affinity.com.srisabaries.CartApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.SignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.TutorialActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.LoginOptionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Settings" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.LoginCallbackFromFitbitActivity"
+            android:alwaysRetainTaskState="true"
+            android:label="@string/title_activity_home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="FitBitIsCallingBack"
+                    android:scheme="affle.com.fitstreet.appsanddevices.fitbit"
+                    tools:ignore="AppLinkUrlError" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.WebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.MyProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.EditProfileActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.ChooseLocationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile"
+            android:windowSoftInputMode="stateVisible" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.CouponsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.RecommendedActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.MyAddressesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.AddAddressActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile"
+            android:windowSoftInputMode="stateVisible" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.CouponsListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.TrendingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.ProductsListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.ProductDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.ChallengeDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.MyOrdersActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Settings" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.CouponsDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.ShareActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.FavouritesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB_44uxzeLofBw4IVfB896gtUST23qngb8" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_live_kVt2OOW3o1PTHZ">
+
+            <!-- android:value="rzp_test_qvRjONGpwIid6y"> -->
+
+        </meta-data>
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider794233090711736"
+            android:exported="true" />
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider794233090711736"
+            android:exported="true" />
+
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.OrderDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <!-- TokenExchangeActivity is associated with FourSquare app -->
+        <activity
+            android:name="com.foursquare.android.nativeoauth.TokenExchangeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.FsStoreMenWomenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.FsStoreProductDetail"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.ContactUsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.FAQActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.FAQDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.CashbackFaqActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.ChallengesFAQActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.ShippingAndOrderFAQActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.CancellationRefundActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.PaymentFaqActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.CheckoutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.EditProfile" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.MyOrdersViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.CancellationDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.SendToBankActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.WalletHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.CashbackHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.PrizeMoneyDetailsActivity"
+            android:screenOrientation="portrait" />
+
+        <service android:name="affinity.com.srisabaries.fcm.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="affinity.com.srisabaries.fcm.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.AppTutorialActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.NotificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="affinity.com.srisabaries.ui.activities.MyCartActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="affinity.com.srisabaries.ui.activities.ImageZoomActivity"></activity>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+    </application>
+
+</manifest>

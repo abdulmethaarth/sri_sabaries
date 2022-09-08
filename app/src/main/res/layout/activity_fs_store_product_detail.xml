@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+
+	tools:context="affinity.com.srisabaries.ui.activities.FsStoreProductDetail">
+
+	<include
+		android:id="@+id/top_toolbar"
+		layout="@layout/include_toolbar" />
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@+id/rl_btn_buy"
+		android:layout_below="@id/top_toolbar"
+		android:background="@color/white">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/d_height_product_image_layout">
+
+				<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+				<android.support.v4.view.ViewPager
+					android:background="@color/c_page_indicator_unselected"
+					android:id="@+id/vp_fs_store_product"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+				</android.support.v4.view.ViewPager>
+				</FrameLayout>
+
+				<RelativeLayout
+					xmlns:android="http://schemas.android.com/apk/res/android"
+					android:layout_width="match_parent"
+					android:layout_height="50dp"
+					android:background="#46000000"
+					android:layout_alignParentBottom="true">
+					<ImageView
+						android:id="@+id/iv_share_product"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:background="#50000000"
+						android:layout_alignParentBottom="true"
+						android:paddingLeft="@dimen/d_mar_normal_10dp"
+						android:paddingRight="@dimen/d_mar_normal_10dp"
+						android:src="@drawable/white_share" />
+
+					<ImageView
+						android:background="#50000000"
+						android:id="@+id/iv_set_favourite"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:layout_alignParentBottom="true"
+						android:paddingLeft="@dimen/d_mar_normal_10dp"
+						android:paddingBottom="@dimen/d_mar_normal_10dp"
+						android:paddingRight="@dimen/d_mar_normal_10dp"
+						android:layout_alignParentRight="true"
+						android:src="@drawable/empty_heart_white_24dp" />
+				</RelativeLayout>
+
+				<LinearLayout
+					android:id="@+id/ll_pager_indicator"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentBottom="true"
+					android:layout_centerHorizontal="true"
+					android:layout_marginBottom="@dimen/d_mar_small_5dp"
+					android:orientation="horizontal" />
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+					android:id="@+id/tv_sold_out"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_alignParentStart="true"
+					android:padding="@dimen/dp10"
+					android:text="Sold Out"
+					android:textAllCaps="true"
+					android:textColor="@color/c_discount_text_color"
+					android:textSize="@dimen/s_txt_16sp"
+					android:textStyle="bold"
+					android:visibility="gone" />
+
+
+			</RelativeLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<LinearLayout
+					android:id="@+id/ll_product_name_layout"
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/d_height_product_name_layout"
+					android:orientation="horizontal"
+					android:weightSum="2">
+
+					<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_product_name"
+						android:layout_width="0dp"
+						android:layout_height="match_parent"
+						android:gravity="center"
+						android:layout_weight="1.1"
+						android:maxLines="2"
+						android:padding="@dimen/dp10"
+						android:textAllCaps="true"
+						android:text=""
+						android:textSize="@dimen/txt_size_fs_product_name" />
+
+					<RelativeLayout
+						android:layout_width="0dp"
+						android:layout_height="match_parent"
+						android:layout_weight=".9"
+						android:gravity="center_vertical"
+						>
+
+						<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+							android:id="@+id/tv_product_actual_price"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_alignParentEnd="true"
+							android:layout_alignParentRight="true"
+							android:gravity="center"
+							android:paddingRight="@dimen/d_mar_small_5dp"
+							android:singleLine="true"
+							android:textSize="@dimen/s_txt_coupuns_activity" />
+
+						<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+							android:id="@+id/tv_product_discount"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_alignParentLeft="true"
+							android:layout_alignParentStart="true"
+							android:layout_toLeftOf="@id/tv_product_actual_price"
+							android:gravity="center"
+							android:paddingRight="@dimen/d_mar_normal_10dp"
+							android:singleLine="true"
+							android:textColor="@color/c_discount_text_color"
+							android:textSize="@dimen/s_txt_coupuns_activity" />
+
+
+						<RelativeLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_below="@id/tv_product_discount"
+							android:paddingRight="@dimen/d_mar_small_5dp">
+
+							<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+								android:id="@+id/tv_discounted_price"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_alignParentEnd="true"
+								android:layout_alignParentRight="true"
+								android:gravity="end"
+								android:paddingBottom="@dimen/d_mar_small_5dp"
+								android:singleLine="true"
+								android:textSize="@dimen/s_txt_coupuns_activity" />
+						</RelativeLayout>
+
+					</RelativeLayout>
+				</LinearLayout>
+
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginBottom="@dimen/dp10"
+					android:background="@color/c_light_gray" />
+			</LinearLayout>
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+					android:id="@+id/tv_select_size"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerHorizontal="true"
+					android:layout_alignParentTop="true"
+					android:padding="@dimen/dp10"
+					android:text="@string/select_size"
+					android:textSize="@dimen/s_txt_coupuns_activity" />
+
+				<!--<affle.com.fitstreet.customviews.CustomTypefaceTextView
+					android:id="@+id/tv_size_chart"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentEnd="true"
+					android:layout_alignParentRight="true"
+					android:layout_alignParentTop="true"
+					android:padding="@dimen/dp10"
+					android:text="@string/size_chart"
+					android:textColor="@color/webnexsColor"
+					android:textSize="@dimen/s_txt_coupuns_activity" />-->
+
+				<LinearLayout
+					android:id="@+id/aaaa"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/tv_select_size"
+					android:gravity="center"
+					android:orientation="horizontal"
+					android:paddingBottom="@dimen/dp20"
+					android:paddingLeft="@dimen/d_size_fs_store_size_buttons"
+					android:paddingRight="@dimen/d_size_fs_store_size_buttons"
+					android:paddingTop="@dimen/dp10"
+					android:weightSum="5">
+
+					<affinity.com.srisabaries.customviews.CustomTypefaceButton
+						android:id="@+id/btn_S"
+						style="@style/btn_fs_store_size"
+						android:layout_marginRight="@dimen/d_mar_normal_10dp"
+						android:text="1"
+						android:visibility="gone" />
+
+					<affinity.com.srisabaries.customviews.CustomTypefaceButton
+						android:id="@+id/btn_M"
+						style="@style/btn_fs_store_size"
+						android:layout_marginLeft="@dimen/d_mar_normal_10dp"
+						android:layout_marginRight="@dimen/d_mar_normal_10dp"
+						android:text="500"
+						android:visibility="gone" />
+
+					<affinity.com.srisabaries.customviews.CustomTypefaceButton
+						android:id="@+id/btn_L"
+						style="@style/btn_fs_store_size"
+						android:layout_marginLeft="@dimen/d_mar_normal_10dp"
+						android:layout_marginRight="@dimen/d_mar_normal_10dp"
+						android:text="L"
+						android:visibility="gone" />
+
+					<affinity.com.srisabaries.customviews.CustomTypefaceButton
+						android:id="@+id/btn_XL"
+						style="@style/btn_fs_store_size"
+						android:layout_marginLeft="@dimen/d_mar_normal_10dp"
+						android:layout_marginRight="@dimen/d_mar_normal_10dp"
+						android:text="XL"
+						android:visibility="gone" />
+
+					<affinity.com.srisabaries.customviews.CustomTypefaceButton
+						android:id="@+id/btn_XXL"
+						style="@style/btn_fs_store_size"
+						android:layout_marginLeft="@dimen/d_mar_normal_10dp"
+						android:layout_marginRight="@dimen/d_mar_normal_10dp"
+						android:text="XXL"
+						android:visibility="gone" />
+				</LinearLayout>
+			</RelativeLayout>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:layout_marginBottom="@dimen/dp10"
+				android:background="@color/c_light_gray" />
+
+			<!--<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:padding="@dimen/d_mar_small_5dp"
+				android:visibility="visible">
+
+				<LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical">
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_txt_points_to_redeem"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="0dp"
+						android:padding="@dimen/d_mar_small_5dp"
+						android:text="@string/txt_points_to_redeem"
+						android:textSize="@dimen/s_txt_coupuns_activity" />
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_redeem_points"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:padding="@dimen/d_mar_small_5dp" />
+
+
+				</LinearLayout>
+
+				<View
+					android:layout_width="@dimen/d_width_div_profile"
+					android:layout_height="50dp"
+					android:background="@color/c_div_profile" />
+
+				<LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical">
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_discount"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="0dp"
+						android:paddingBottom="@dimen/d_mar_small_5dp"
+						android:paddingLeft="@dimen/dp10"
+						android:paddingRight="@dimen/d_mar_small_5dp"
+						android:paddingTop="@dimen/d_mar_small_5dp"
+						android:text="@string/txt_discount"
+						android:textSize="@dimen/s_txt_coupuns_activity" />
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_discount_value"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:paddingBottom="@dimen/d_mar_small_5dp"
+						android:paddingLeft="@dimen/dp10"
+						android:paddingRight="@dimen/d_mar_small_5dp"
+						android:paddingTop="@dimen/d_mar_small_5dp"
+						android:textSize="@dimen/s_txt_coupuns_activity" />
+
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="@color/c_light_gray" />-->
+
+			<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingBottom="@dimen/d_mar_small_5dp"
+				android:paddingLeft="@dimen/dp10"
+				android:paddingRight="@dimen/d_mar_small_5dp"
+				android:paddingTop="@dimen/d_mar_small_5dp"
+				android:text="@string/product_details"
+				android:textAllCaps="true"
+				android:textSize="@dimen/s_txt_coupuns_activity" />
+
+			<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingBottom="@dimen/d_mar_small_5dp"
+				android:paddingLeft="@dimen/dp10"
+				android:paddingRight="@dimen/d_mar_small_5dp"
+				android:paddingTop="@dimen/d_mar_small_5dp"
+				android:text="@string/description_fs_store_product"
+				android:textColor="@color/c_green_switch"
+				android:textSize="@dimen/s_txt_coupuns_activity" />
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<ScrollView
+					android:id="@+id/SCROLLER_ID"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:fillViewport="true"
+					android:scrollbars="vertical">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical">
+
+						<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+							android:id="@+id/tv_product_desc"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1.0"
+							android:ellipsize="end"
+							android:lines="4"
+							android:padding="@dimen/d_mar_normal_10dp"
+							android:textSize="@dimen/txt_select_size_11sp"></affinity.com.srisabaries.customviews.CustomTypefaceTextView>
+
+						<affinity.com.srisabaries.customviews.CustomTypefaceButton
+							android:id="@+id/btn_know_more"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="end"
+							android:background="@color/c_transparent"
+							android:text="Know More"
+							android:textAllCaps="false"
+							android:textColor="@color/c_green_switch"
+							android:textSize="@dimen/s_txt_coupuns_activity" />
+					</LinearLayout>
+				</ScrollView>
+
+			</LinearLayout>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="@color/c_light_gray" />
+
+			<!--<affle.com.fitstreet.customviews.CustomTypefaceTextView
+				android:id="@+id/tv_material"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="@dimen/dp10"
+				android:text="@string/material"
+				android:textColor="@color/c_green_switch"
+				android:textSize="@dimen/txt_size_sp14" />
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:paddingLeft="@dimen/dp10">
+
+				<RelativeLayout
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:gravity="center">
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_sleeve_text"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/sleeve"
+						android:textColor="@color/c_green_switch"
+						android:textSize="@dimen/txt_size_sp11" />
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_sleeve_value"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/tv_sleeve_text"
+						android:textSize="@dimen/txt_size_sp14" />
+				</RelativeLayout>
+
+				<RelativeLayout
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:gravity="center">
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_color_text"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/color"
+						android:textColor="@color/c_green_switch"
+						android:textSize="@dimen/txt_size_sp11" />
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_color_value"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/tv_color_text"
+						android:textSize="@dimen/txt_size_sp14" />
+				</RelativeLayout>
+
+				<RelativeLayout
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:gravity="center">
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_care_for_text"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/care"
+						android:textColor="@color/c_green_switch"
+						android:textSize="@dimen/txt_size_sp11" />
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_care_for_value"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/tv_care_for_text"
+						android:textSize="@dimen/txt_size_sp14" />
+				</RelativeLayout>
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:paddingBottom="@dimen/d_mar_normal_10dp"
+				android:paddingLeft="@dimen/dp10">
+
+				<RelativeLayout
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:gravity="center">
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_fabric_text"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/fabric"
+						android:textColor="@color/c_green_switch"
+						android:textSize="@dimen/txt_size_sp11" />
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_fabric_value"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/tv_fabric_text"
+						android:textSize="@dimen/txt_size_sp14" />
+				</RelativeLayout>
+
+				<RelativeLayout
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:gravity="center">
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_fit_text"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/fit"
+						android:textColor="@color/c_green_switch"
+						android:textSize="@dimen/txt_size_sp11" />
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_fit_value"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/tv_fit_text"
+						android:textSize="@dimen/txt_size_sp14" />
+				</RelativeLayout>
+
+				<RelativeLayout
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:gravity="center">
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_suitable_for_text"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/suitable_for"
+						android:textColor="@color/c_green_switch"
+						android:textSize="@dimen/txt_size_sp11" />
+
+					<affle.com.fitstreet.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_suitable_for_value"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/tv_suitable_for_text"
+						android:textSize="@dimen/txt_size_sp14" />
+				</RelativeLayout>
+			</LinearLayout>-->
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="@color/c_light_gray" />
+
+			<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+					android:id="@+id/tv_delivery_text"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_alignParentStart="true"
+					android:padding="@dimen/dp10"
+					android:text="@string/txt_delivery"
+					android:textColor="@color/c_green_switch"
+					android:textSize="@dimen/txt_size_sp14" />
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+					android:id="@+id/tv_check_pin_code_text"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentEnd="true"
+					android:layout_alignParentRight="true"
+					android:gravity="start"
+					android:padding="@dimen/dp10"
+					android:text="@string/check_pincode"
+					android:textSize="@dimen/txt_size_sp14" />
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+					android:id="@+id/tv_delivery_value"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_alignParentStart="true"
+					android:layout_below="@id/tv_delivery_text"
+					android:paddingBottom="@dimen/d_mar_small_5dp"
+					android:paddingLeft="@dimen/dp10"
+					android:paddingRight="@dimen/d_mar_small_5dp"
+					android:textSize="@dimen/txt_size_sp14" />
+
+				<RelativeLayout
+					android:id="@+id/ll_check_pin_code"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentEnd="true"
+					android:layout_alignParentRight="true"
+					android:layout_below="@id/tv_check_pin_code_text"
+					android:layout_marginBottom="@dimen/d_mar_normal_10dp"
+					android:layout_marginRight="@dimen/d_mar_normal_10dp"
+					android:background="@drawable/x_ds_transparent_stroke_green"
+					android:paddingLeft="@dimen/d_mar_normal_10dp"
+					android:paddingRight="@dimen/d_mar_normal_10dp">
+
+					<affinity.com.srisabaries.customviews.CustomTypefaceEditText
+						android:id="@+id/et_pin_code"
+						android:layout_width="wrap_content"
+						android:layout_height="35dp"
+						android:layout_alignParentLeft="true"
+						android:layout_alignParentStart="true"
+						android:layout_marginRight="@dimen/d_mar_extra_large_20dp"
+						android:background="@android:color/transparent"
+						android:hint="@string/enter_your_pincode"
+						android:inputType="number"
+						android:maxLines="1"
+						android:textColorHint="@color/c_light_gray"
+						android:textSize="@dimen/txt_select_size_11sp" />
+
+					<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+						android:id="@+id/tv_Check_pin_code"
+						android:layout_width="wrap_content"
+						android:layout_height="35dp"
+						android:layout_toRightOf="@id/et_pin_code"
+						android:gravity="center_vertical"
+						android:text="@string/check"
+						android:textColor="@color/c_discount_text_color"
+						android:textSize="@dimen/txt_select_size_11sp" />
+				</RelativeLayout>
+			</RelativeLayout>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:layout_marginTop="@dimen/d_mar_small_5dp"
+				android:background="@color/c_light_gray" />
+
+			<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingBottom="@dimen/d_mar_normal_10dp"
+				android:paddingLeft="@dimen/dp10"
+				android:paddingTop="@dimen/dp10"
+				android:text="@string/txt_return"
+				android:textColor="@color/c_green_switch"
+				android:textSize="@dimen/txt_size_sp14" />
+
+			<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+				android:id="@+id/tv_return_value_days"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingBottom="@dimen/d_mar_normal_10dp"
+				android:paddingLeft="@dimen/dp10"
+				android:text="@string/txt_return_days_value"
+				android:textSize="@dimen/txt_size_sp14" />
+		</LinearLayout>
+
+	</ScrollView>
+
+	<LinearLayout
+		android:id="@+id/rl_btn_buy"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:orientation="vertical">
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/d_elev_cv_address"
+			android:layout_above="@+id/btn_buy_now"
+			android:layout_marginBottom="@dimen/d_mar_b_view_address_row"
+			android:background="@drawable/x_ds_top_shadow" />
+
+
+		<affinity.com.srisabaries.customviews.CustomTypefaceButton
+			android:id="@+id/btn_buy_now"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="@dimen/d_mar_small_5dp"
+			android:layout_marginLeft="@dimen/d_mar_normal_10dp"
+			android:layout_marginRight="@dimen/d_mar_normal_10dp"
+			android:layout_marginTop="@dimen/d_mar_small_5dp"
+			android:background="@drawable/x_ds_transparent_blue"
+			android:gravity="center"
+			android:text="@string/txt_buy_now"
+			android:textColor="@color/webnexsColor"
+			android:textSize="@dimen/s_btn_add_address" />
+
+		<TextView
+			android:id="@+id/sold_out_text"
+			android:visibility="gone"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="@dimen/d_mar_small_5dp"
+			android:layout_marginLeft="@dimen/d_mar_normal_10dp"
+			android:layout_marginRight="@dimen/d_mar_normal_10dp"
+			android:layout_marginTop="@dimen/d_mar_small_5dp"
+			android:gravity="center"
+			android:text="SOLD OUT"
+			android:textSize="@dimen/s_btn_add_address"
+			android:textStyle="bold"
+			android:padding="10dp"/>
+
+	</LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/white"
+	android:orientation="vertical"
+	tools:context="affinity.com.srisabaries.ui.activities.SignUpActivity">
+
+	<android.support.v7.widget.Toolbar
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<ImageView
+			android:id="@+id/iv_back"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/back_black_24dp" />
+
+		<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+			android:id="@+id/tv_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/d_pad_title_toolbar"
+			android:textColor="@color/c_black" />
+
+	</android.support.v7.widget.Toolbar>
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_marginLeft="@dimen/d_mar_extra_large_20dp"
+				android:layout_marginRight="@dimen/d_mar_extra_large_20dp"
+				android:orientation="vertical">
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="@dimen/d_mar_tv_sign_up_title"
+					android:text="Sign Up"
+					android:textAlignment="center"
+					android:textColor="@color/c_black"
+					android:textSize="@dimen/dp25" />
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="@dimen/d_mar_tv_sign_up_title"
+					android:text="Please type your information below"
+					android:textAlignment="center"
+					android:textSize="@dimen/dp15" />
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceEditText
+					android:id="@+id/et_name"
+					style="@style/edittext_login_sign_up"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/txt_hint_name"
+					android:inputType="textCapWords" />
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceEditText
+					android:id="@+id/et_lname"
+					style="@style/edittext_login_sign_up"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="Last Name "
+					android:inputType="textCapWords" />
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceEditText
+					android:id="@+id/et_mobile"
+					style="@style/edittext_login_sign_up"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:digits="+0123456789"
+					android:hint="@string/txt_hint_mobile_no"
+					android:inputType="phone"
+					android:maxLength="@integer/max_length_mobile" />
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceEditText
+					android:id="@+id/et_dob"
+					android:visibility="gone"
+					style="@style/edittext_login_sign_up"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:focusable="false"
+					android:hint="@string/txt_hint_dob" />
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceEditText
+					android:id="@+id/et_email_id"
+					style="@style/edittext_login_sign_up"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/txt_hint_email_id"
+					android:inputType="textEmailAddress" />
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceEditText
+					android:id="@+id/et_password"
+					style="@style/edittext_login_sign_up"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/txt_hint_password"
+					android:inputType="textPassword"
+					android:maxLength="@integer/max_length_password" />
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceEditText
+					android:id="@+id/et_cpassword"
+					style="@style/edittext_login_sign_up"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="Confirm Password"
+					android:inputType="textPassword"
+					android:maxLength="@integer/max_length_password" />
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceEditText
+					android:id="@+id/et_share_code"
+					android:visibility="gone"
+					style="@style/edittext_login_sign_up"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/invite_code"
+					android:inputType="textCapCharacters" />
+
+				<LinearLayout
+					android:visibility="gone"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/d_mar_ll_gender"
+					android:orientation="horizontal">
+
+					<affinity.com.srisabaries.customviews.CustomTypefaceButton
+						android:id="@+id/btn_male"
+						style="@style/btn_gender_login_sign_up"
+						android:layout_marginRight="@dimen/d_mar_btn_gender"
+						android:text="@string/txt_male" />
+
+					<affinity.com.srisabaries.customviews.CustomTypefaceButton
+						android:id="@+id/btn_female"
+						style="@style/btn_gender_login_sign_up"
+						android:layout_marginLeft="@dimen/d_mar_btn_gender"
+						android:layout_marginRight="@dimen/d_mar_btn_gender"
+						android:text="@string/txt_female" />
+
+					<affinity.com.srisabaries.customviews.CustomTypefaceButton
+						android:id="@+id/btn_others"
+						style="@style/btn_gender_login_sign_up"
+						android:layout_marginLeft="@dimen/d_mar_btn_gender"
+						android:text="@string/txt_others" />
+				</LinearLayout>
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+					android:id="@+id/tv_receive_updates"
+					android:visibility="gone"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/d_mar_email_updates"
+					android:drawableLeft="@drawable/x_sd_radio"
+					android:drawablePadding="@dimen/d_dpad_email_updates"
+					android:gravity="center_vertical"
+					android:padding="@dimen/d_padding_radio_button"
+					android:text="@string/rb_text_receive_updates"
+					android:textColor="@color/c_black" />
+
+				<affinity.com.srisabaries.customviews.CustomTypefaceButton
+					android:id="@+id/btn_create_account"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/d_mar_large_15dp"
+					android:background="@drawable/x_ds_grey_pink"
+					android:gravity="center"
+					android:padding="@dimen/d_pad_btn_login_sign_up"
+					android:text="@string/btn_create_account"
+					android:textAlignment="center"
+					android:textColor="@color/c_white" />
+			</LinearLayout>
+
+			<affinity.com.srisabaries.customviews.CustomTypefaceTextView
+				android:id="@+id/tv_text_terms_conditions"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_gravity="bottom"
+				android:layout_marginBottom="@dimen/d_mar_terms"
+				android:layout_marginTop="@dimen/d_mar_terms"
+				android:ellipsize="end"
+				android:maxLines="1"
+				android:text="You have an account? Sign In"
+				android:textAlignment="center"
+				android:textSize="@dimen/dp15" />
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>
+
